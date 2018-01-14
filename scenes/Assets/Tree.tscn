@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/Assets/Tree.gd" type="Script" id=1]
+[ext_resource path="res://gfx/Tree.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 4.01982, 3.86234 )
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 11.7218, 10 )
+
+[node name="Tree" type="Node"]
+
+script = ExtResource( 1 )
+speed = 40
+
+[node name="Tree" type="Node2D" parent="." index="0" groups=[
+"Tree",
+]]
+
+position = Vector2( 32, 511.005 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Tree" type="Area2D" parent="Tree" index="0"]
+
+position = Vector2( 0.527046, -0.527042 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Pickable", "Transform" ]
+
+[node name="Img" type="Sprite" parent="Tree/Tree" index="0"]
+
+position = Vector2( -0.527046, 0.527039 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree/Tree" index="1"]
+
+position = Vector2( -2.36102, 24.3591 )
+scale = Vector2( 1, 1.92305 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="." index="1"]
+
+position = Vector2( 246.348, -22.3827 )
+scale = Vector2( 8.69838, 1.69946 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+
+position = Vector2( 4.48265, -28.5004 )
+scale = Vector2( 3.30487, 2 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+
+
