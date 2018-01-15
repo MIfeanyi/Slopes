@@ -33,6 +33,6 @@ func _process(delta):
 		flags.PLAY = true
 
 func _on_Area2D_area_entered( area ):
-	if area.get_parent().is_in_group("Tree"):
+	if area.get_parent().is_in_group("Tree") or area.get_parent().is_in_group("Rock") :
 		flags.ALIVE = false
 	pass # replace with function body
