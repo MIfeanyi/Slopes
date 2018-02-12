@@ -21,4 +21,13 @@ func _ready():
 	pass
 
 func _process(delta):
+	if has_node("Rock"):
+		flags.ROCK_RESET = false
+	else:
+		flags.ROCK_RESET = true
+		
+	if has_node("Tree"):
+		flags.TREE_RESET = false
+	else:
+		flags.TREE_RESET = true
 	pass

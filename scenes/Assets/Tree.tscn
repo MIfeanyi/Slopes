@@ -13,7 +13,7 @@ extents = Vector2( 4.01982, 3.86234 )
 custom_solver_bias = 0.0
 extents = Vector2( 11.7218, 10 )
 
-[node name="Tree" type="Node"]
+[node name="Tree" type="Node" index="0"]
 
 script = ExtResource( 1 )
 speed = 40

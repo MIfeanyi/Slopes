@@ -31,6 +31,10 @@ func _process(delta):
 		anim.play("Dead")
 	if(Input.is_key_pressed(KEY_SPACE)):
 		flags.PLAY = true
+		$AnimationPlayer.play("Left")
+	if(flags.RESET == true):
+		flags.ALIVE = true
+		$AnimationPlayer.play("Idle")
 
 func _on_Area2D_area_entered( area ):
 	if area.get_parent().is_in_group("Tree") or area.get_parent().is_in_group("Rock") :

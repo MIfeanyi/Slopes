@@ -19,6 +19,8 @@ func _process(delta):
 		direction = Vector2(0,0)
 		direction += Vector2(0,-1)
 		Rock.translate(direction * flags.SPEED * delta)
+	if(flags.RESET ==true):
+		queue_free()
 
 func _on_Area2D_area_entered( area ):
 	if area.get_parent().is_in_group("Rock"):

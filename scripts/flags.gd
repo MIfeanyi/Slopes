@@ -2,17 +2,20 @@ extends Node
 
 var PLAY = false
 var ALIVE = true
+var RESET = false
 var SPEED = 100
+var ROCK_RESET = false
+var TREE_RESET = false
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
 	pass
 
 func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
+	if RESET ==true:
+		reset()
 	pass
 
 func reset():
+	if ROCK_RESET == true and TREE_RESET == true:
+		RESET = false
 	pass
