@@ -1,8 +1,6 @@
 extends Container
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
 	pass
 
 func _process(delta):
@@ -15,4 +13,7 @@ func _process(delta):
 
 func _on_Reset_pressed():
 	flags.RESET = true
-	pass # replace with function body
+
+
+func _on_Quit_pressed():
+	get_tree().quit()

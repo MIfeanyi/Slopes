@@ -135,7 +135,7 @@ extents = Vector2( 10, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 28.4092, 20.4221 )
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" index="0"]
 
 script = ExtResource( 1 )
 spawnAmount = 3
@@ -160,7 +160,6 @@ _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
-speed = 50
 
 [node name="Particles2D" type="Particles2D" parent="Player" index="0"]
 
@@ -330,5 +329,7 @@ align = 1
 [connection signal="timeout" from="util/Rock Spawner" to="." method="spawn" binds= [ "Rock" ]]
 
 [connection signal="pressed" from="Game Over/Reset" to="Game Over" method="_on_Reset_pressed"]
+
+[connection signal="pressed" from="Game Over/Quit" to="Game Over" method="_on_Quit_pressed"]
 
 
